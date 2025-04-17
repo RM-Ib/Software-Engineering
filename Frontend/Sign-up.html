@@ -73,7 +73,7 @@ box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7),
       }
       
       
-      .login-container {
+      .signup-container {
           background: white;
           padding: 20px;
           border-radius: 10px;
@@ -144,15 +144,29 @@ input[type="submit"]:hover {
   <body>
 
     <div class='background'></div>
-    
+
 
     <div class="full_container">
-        <img src="..\Images\Logo.png" alt="Logo" class="logo">
-    <div class="login-container">
-        
-      <h1>Log in</h1>
+    <div class="signup-container">
+      <h1>Sign up</h1>
       
-      <form action="categories.html" method="GET" onsubmit="return validateForm()"> <!-- for now since theres no backend directly gets u to categories page -->
+      <form action="Log-in.html" method="GET" onsubmit="return validateForm()"><!--only for now, while theres no backend, must bring u back to login page to login to new acc-->
+        <div class=eLabel>
+        <label for="Fname">First name</label><br>
+        <input type="text" id="Fname" name="Fname" required><br>
+        </div>
+        <div class=eLabel>
+        <label for="Lname">Last name</label><br>
+        <input type="text" id="Lname" name="Lname" required><br>
+        </div>
+        <div class=eLabel>
+        <label for="Pnumber">Emergency contact number</label><br>
+        <input type="text" id="Pnumber" name="Pnumber" required><br>
+        </div>
+        <div class=eLabel>
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" required><br>
+        </div>
         <div class=eLabel>
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email" required><br>
@@ -160,23 +174,35 @@ input[type="submit"]:hover {
         <div class=eLabel>
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password" required><br><br>
-	<a href="ForgotPassword.html" style="font-size: 0.9em; color: #1E4A3B; display: block; margin-bottom: 10px;">Forgot Password?</a>
         </div>
-        <input type="submit" value="Log in"><br>
-      </form>
-    
-      <p>Don't have an account?</p>
-      <a href="Sign-up.html">Sign Up</a>
-    </div>
-    </div>
+        <div class=eLabel>
+            <label for="Weight">Weight (in Kilograms)</label><br>
+            <input type="text" id="Weight" name="Weight" required><br><br>
+        </div>
+        <div class=eLabel>
+            <label for="Height">Height (in centimeters)</label><br>
+            <input type="text" id="Height" name="Height" required><br><br>
+        </div>
+        <div class=eLabel>
+            <label for="Disabilities">Disabilities (if any)</label><br>
+            <input type="text" id="Disabilities" name="Disabilities"><br><br>
+        </div>     
+        <input type="submit" value="Sign up"><br>
 
 
     <script>
     function validateForm()  {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const Fname = document.getElementById("Fname").value;
+    const Lname = document.getElementById("Lname").value;
+    const Pnumber = document.getElementById("Pnumber").value;
+    const username = document.getElementById("username").value;
+    const Height = document.getElementById("Height").value;
+    const Weight = document.getElementById("Weight").value;
+    const Disabilities = document.getElementById("Disabilities").value;
 
-    if (!email ||!password) {
+    if (!email ||!password ||!username ||!Fname ||!Lname ||!Pnumber ||!Height ||!Weight) {
       alert("Both fields are required.");
       return false; 
     }
