@@ -1,11 +1,21 @@
 * {
     box-sizing: border-box;
   }
+
+  body {
+    display: flex;
+    flex-direction: column;
+}
   
   body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
   }
+
+  main {
+    flex: 1;
+}
   
 
 
@@ -62,8 +72,8 @@
   /* FOOTER STYLES */
   footer {
     background-color: #7393B3; 
-    text-align: justify;
-    padding: 15px 0; /* Add vertical spacing above and below it */
+    text-align: center;
+    padding: 10px; /* Add vertical spacing above and below it */
     font-size: 14px; 
     width: 100%; /* Full width */
     bottom: 0; /* Stick to the bottom */
