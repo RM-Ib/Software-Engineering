@@ -1,0 +1,207 @@
+<!-- Skiing Category Page - HWCA -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skiing - HWCA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-image: url("https://images.unsplash.com/photo-1602923491728-0131d6639b75?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #1f4e70;
+    }
+
+    .container {
+      background-color: #066293;
+      background-image: url("../Images/snowflakes.jpg");
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      color: #1a6f96;
+      margin-bottom: 20px;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .images img {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 2em;
+      text-align: center;
+      color: #1a6f96;
+      margin-bottom: 20px;
+    }
+
+    .levels {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .level-box {
+      background-color: #e1f5fe;
+      flex: 1;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      min-height: 360px;
+    }
+
+    .level-box h3 {
+      color: #066293;
+      margin-bottom: 10px;
+    }
+
+    .level-box ul {
+      margin: 10px 0 0 20px;
+    }
+
+    .level-box .timing {
+      margin-top: 10px;
+      background-color: #d0eafd;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .register-section {
+      text-align: center;
+    }
+
+    .register-btn {
+      padding: 12px 25px;
+      background-color: #228ecf;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background-color: #176a9e;
+    }
+
+    @media (max-width: 1024px) {
+      .levels {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .level-box {
+        width: 90%;
+      }
+    }
+    .description-box {
+  background-color: #e1f5fe;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: justify;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Skiing ❄️</h1>
+
+    <div class="images">
+        <img src="../Images/skiing.jpg" alt="Skiing 1">
+        <img src="../Images/skiing2.jpg" alt="Skiing 2">
+        
+    </div>
+
+    <div class="description-box">
+      <p>
+        Skiing is more than just a sport—it's an adventure, a rush of adrenaline, and a beautiful dance between you and the snow. Whether you’re carving your first turns or mastering black diamond runs, our skiing program at HWCA is designed to offer fun, safety, and progression for all ages and levels. Taught by experienced instructors in scenic winter landscapes, our skiing experience is guaranteed to leave you exhilarated!
+      </p>
+    </div>
+
+    <h2>Courses</h2>
+    <div class="levels">
+      <div class="level-box">
+        <h3>Beginner</h3>
+        <p>Learn the basics: how to stop, turn, and stay balanced. Perfect for first-timers or those needing a confidence boost.</p>
+        <ul>
+          <li>Intro to Skiing</li>
+          <li>Snowplow Techniques</li>
+          <li>Getting On/Off the Lift</li>
+        </ul>
+        <div class="timing">
+          <strong>Offered:</strong><br>
+          Mon & Wed - 10:00 AM to 12:00 PM<br>
+          Sat - 2:00 PM to 4:00 PM
+        </div>
+      </div>
+
+      <div class="level-box">
+        <h3>Intermediate</h3>
+        <p>Improve your skills: parallel skiing, controlling speed, and smoother turns on steeper terrain.</p>
+        <ul>
+          <li>Carving Basics</li>
+          <li>Speed Control</li>
+          <li>Confidence on Red Slopes</li>
+        </ul>
+        <div class="timing">
+          <strong>Offered:</strong><br>
+          Tue & Thu - 11:00 AM to 1:00 PM<br>
+          Sun - 3:00 PM to 5:00 PM
+        </div>
+      </div>
+
+      <div class="level-box">
+        <h3>Expert</h3>
+        <p>For advanced skiers looking to conquer off-piste terrain, jumps, moguls, and refine high-speed control.</p>
+        <ul>
+          <li>Off-Piste Adventures</li>
+          <li>Freestyle & Jumps</li>
+          <li>Black Diamond Challenges</li>
+        </ul>
+        <div class="timing">
+          <strong>Offered:</strong><br>
+          Fri - 9:00 AM to 12:00 PM<br>
+          Sun - 10:00 AM to 1:00 PM
+        </div>
+      </div>
+    </div>
+
+    <div class="register-section">
+      <a href="register.html" class="register-btn">Register Now</a>
+    </div>
+  </div>
+</body>
+</html>
