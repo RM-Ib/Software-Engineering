@@ -164,10 +164,6 @@ input[type="submit"]:hover {
         <input type="text" id="Pnumber" name="Pnumber" required><br>
         </div>
         <div class=eLabel>
-        <label for="username">Username</label><br>
-        <input type="text" id="username" name="username" required><br>
-        </div>
-        <div class=eLabel>
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email" required><br>
         </div>
@@ -197,12 +193,11 @@ input[type="submit"]:hover {
     const Fname = document.getElementById("Fname").value;
     const Lname = document.getElementById("Lname").value;
     const Pnumber = document.getElementById("Pnumber").value;
-    const username = document.getElementById("username").value;
     const Height = document.getElementById("Height").value;
     const Weight = document.getElementById("Weight").value;
     const Disabilities = document.getElementById("Disabilities").value;
 
-    if (!email ||!password ||!username ||!Fname ||!Lname ||!Pnumber ||!Height ||!Weight) {
+    if (!email ||!password ||!Fname ||!Lname ||!Pnumber ||!Height ||!Weight) {
       alert("All fields are required.");
       return false; 
     }
