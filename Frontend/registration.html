@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="registrationStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-      const progress = document.getElementById("progress");
-      const formSteps = document.querySelectorAll(".form-step");
-      const progressSteps = document.querySelectorAll(".progress-step");
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="registration-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-      let formStepsNum = 0;
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    const progress = document.getElementById("progress");
+    const formSteps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-step");
 
-      $(document).ready(function(){
-        $("#navbar").load("nav.txt");
-        $("#footer").load("footer.txt");
+    let formStepsNum = 0;
 
-        $(".btn-next").click(function(){
-          $("#step1").hide();
-          $("#step2").show();
-          $("#progress-step2").addClass("progress-step-active");
-          $(".progress").css("width", "100%");
-        });
+    $(document).ready(function () {
+      $("#navbar").load("nav.txt");
+      $("#footer").load("footer.txt");
 
-        $(".btn-prev").click(function(){
-          $("#step2").hide();
-          $("#step1").show();
-          $("#progress-step2").removeClass("progress-step-active");
-          $(".progress").css("width", "0%");
-        });
-
-        $("#yes").click(function(){
-          $("#equip-select").show();
-        });
-
-        $("#no").click(function(){
-          $("#equip-select").hide();
-        });
-
-        $("#omt").click(function(){
-          $("#omt-warning").show();
-          $("#card-details").hide();
-        });
-
-        $("#card").click(function(){
-          $("#omt-warning").hide();
-          $("#card-details").show();
-        });
+      $(".btn-next").click(function () {
+        $("#step1").hide();
+        $("#step2").show();
+        $("#progress-step2").addClass("progress-step-active");
+        $(".progress").css("width", "100%");
       });
 
-      
-    </script>
+      $(".btn-prev").click(function () {
+        $("#step2").hide();
+        $("#step1").show();
+        $("#progress-step2").removeClass("progress-step-active");
+        $(".progress").css("width", "0%");
+      });
+
+      $("#yes").click(function () {
+        $("#equip-select").show();
+      });
+
+      $("#no").click(function () {
+        $("#equip-select").hide();
+      });
+
+      $("#omt").click(function () {
+        $("#omt-warning").show();
+        $("#card-details").hide();
+      });
+
+      $("#card").click(function () {
+        $("#omt-warning").hide();
+        $("#card-details").show();
+      });
+    });
+
+
+  </script>
 </head>
+
 <body>
   <div id="navbar">
 
@@ -149,7 +151,7 @@
             </div>
 
             <div class="flex">
-              <div  style="width:49%">
+              <div style="width:49%">
                 <label for="card-month" class="block">Month</label>
                 <select name="card-month" id="card-month">
                   <option value="1">1</option>
@@ -167,7 +169,7 @@
                 </select>
               </div>
 
-              <div  style="width:49%">
+              <div style="width:49%">
                 <label for="card-year" class="block">Year</label>
                 <select name="card-year" id="card-year">
                   <option value="2025">2025</option>
@@ -190,7 +192,7 @@
               <input type="text" name="lname" id="lname" required>
             </div>
           </div>
-          
+
           <div class="btns-group">
             <a href="#" class="btn btn-prev">Previous</a>
             <input type="submit" value="Submit" class="btn">
@@ -205,4 +207,5 @@
 
   </div>
 </body>
+
 </html>

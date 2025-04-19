@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  main {
+    font-size: 1.15rem;
+    background-color: #e2edfa;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .form {
+    display: grid;
+    place-items: center;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Progress bar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    width: 100%;
+    z-index: 5;
+  }
+  
+  .progressbar::before, .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color: #0a2463;
+    width: 0%;
+    transition: 0.3s;
+  }
+  
+  .progress-step {
+    background-color: #dcdcdc;
+    padding: 0.40rem;
+    border-radius: 5%;
+    min-width: 100px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progress-step-active {
+    background-color: #0a2463;
+    color: white;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* End of progress bar */
+  
+  
+  /* Form */
+  form {
+    width: clamp(320px, 30%, 430px);
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+    background-color: #fff;
+  }
+  
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  #equip-select, #card-details {
+    display: none;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  label, p {
+    margin-bottom: 0.5rem;
+  }
+  
+  #omt-warning  {
+    color: red;
+    margin-bottom: 1rem;
+  }
+  
+  select, input[type=text] {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+  }
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  /* buttons */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    display: block;
+    text-decoration: none;
+    padding: 0.75rem;
+  
+    background-color: #0a2463;
+    color: #f3f3f3;
+    border-radius: 0.25rem;
+  
+    text-align: center;
+    cursor: pointer;
+  
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #0a2463;
+  }
+  
+  input[type="submit"] {
+    border: none;
+  } 
+  
+  /* end of buttons */
