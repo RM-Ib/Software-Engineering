@@ -1,24 +1,19 @@
-<!-- Skiing Category Page - HWCA -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skiing - HWCA</title>
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-image: url("https://images.unsplash.com/photo-1602923491728-0131d6639b75?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      background-color: #f9fbfc;
       color: #1f4e70;
     }
 
     .container {
-      background-color: #066293;
-      background-image: url("../Images/snowflakes.jpg");
+      background-color: #d0eafd;
       max-width: 1200px;
       margin: 40px auto;
       padding: 30px;
@@ -33,24 +28,59 @@
       margin-bottom: 20px;
     }
 
-    .images {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+    .fade-slider {
+      position: relative;
+      height: 300px;
+      max-width: 100%;
+      overflow: hidden;
       margin-bottom: 25px;
     }
 
-    .images img {
-      width: 250px;
+    .fade-slider img {
+      position: absolute;
+      width: 600px;
+      height: 100%;
+      object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .description {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 30px;
+    .fade-slider img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .slider-controls button {
+      background-color: rgba(0,0,0,0.4);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .description-box {
+      background-color: #e1f5fe;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      text-align: justify;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     h2 {
@@ -65,15 +95,17 @@
       gap: 20px;
       justify-content: space-between;
       margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
     .level-box {
       background-color: #e1f5fe;
       flex: 1;
-      padding: 25px;
+      padding: 15px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      min-height: 360px;
+      min-height: 120px;
+      position: relative;
     }
 
     .level-box h3 {
@@ -85,7 +117,7 @@
       margin: 10px 0 0 20px;
     }
 
-    .level-box .timing {
+    .timing {
       margin-top: 10px;
       background-color: #d0eafd;
       padding: 10px;
@@ -93,13 +125,9 @@
       font-size: 0.95rem;
     }
 
-    .register-section {
-      text-align: center;
-    }
-
     .register-btn {
       padding: 12px 25px;
-      background-color: #228ecf;
+      background-color: #1a6f96;
       color: white;
       font-size: 1rem;
       border: none;
@@ -110,7 +138,98 @@
     }
 
     .register-btn:hover {
-      background-color: #176a9e;
+      background-color: #1a6f96;
+    }
+
+    .instructor-btn {
+      background-color: #1a6f96;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+      color: #1f4e70;
+    }
+
+    .modal-content img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .close {
+      margin-top: 10px;
+      background-color: #e1f5fe;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .facts-box {
+      background-color: #e3f7ff;
+      padding: 15px;
+      border-radius: 10px;
+      font-style: italic;
+      margin: 25px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* New quiz section styles */
+    .quiz-section {
+      background-color: #e1f5fe;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    
+    .quiz-btn {
+      padding: 12px 25px;
+      background-color: #1a6f96;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+    }
+    
+    .quiz-btn:hover {
+      background-color: #1a6f96;
+    }
+    
+    .quiz-results {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d0eafd;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
     }
 
     @media (max-width: 1024px) {
@@ -122,40 +241,43 @@
       .level-box {
         width: 90%;
       }
-    }
-    .description-box {
-  background-color: #e1f5fe;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  text-align: justify;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
 
-    
+      .fade-slider img {
+        width: 90%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Skiing ❄️</h1>
 
-    <div class="images">
-        <img src="../Images/skiing.jpg" alt="Skiing 1">
-        <img src="../Images/skiing2.jpg" alt="Skiing 2">
-        
+    <div class="fade-slider" id="slider">
+      <img src="../Images/skiing.jpg" alt="Skiing 1" class="active" onmouseenter="playSound()">
+      <img src="../Images/skiing2.jpg" alt="Skiing 2" onmouseenter="playSound()">
+
+      <div class="slider-controls">
+        <button onclick="prevSlide()">&#8592;</button>
+        <button onclick="nextSlide()">&#8594;</button>
+      </div>
     </div>
 
     <div class="description-box">
       <p>
-        Skiing is more than just a sport—it's an adventure, a rush of adrenaline, and a beautiful dance between you and the snow. Whether you’re carving your first turns or mastering black diamond runs, our skiing program at HWCA is designed to offer fun, safety, and progression for all ages and levels. Taught by experienced instructors in scenic winter landscapes, our skiing experience is guaranteed to leave you exhilarated!
+        Skiing is more than just a sport—it's an adventure, a rush of adrenaline, and a beautiful dance between you and the snow. Whether you're carving your first turns or mastering black diamond runs, our skiing program at HWCA is designed to offer fun, safety, and progression for all ages and levels. Taught by experienced instructors in scenic winter landscapes, our skiing experience is guaranteed to leave you exhilarated!
       </p>
+    </div>
+
+    <div class="facts-box" id="factsBox">
+      ⛷️ "Skiing helps build core strength and coordination!"
     </div>
 
     <h2>Courses</h2>
     <div class="levels">
       <div class="level-box">
         <h3>Beginner</h3>
-        <p>Learn the basics: how to stop, turn, and stay balanced. Perfect for first-timers or those needing a confidence boost.</p>
+        <p>Learn the basics: how to stop, turn, and stay balanced.</p>
         <ul>
           <li>Intro to Skiing</li>
           <li>Snowplow Techniques</li>
@@ -166,6 +288,7 @@
           Mon & Wed - 10:00 AM to 12:00 PM<br>
           Sat - 2:00 PM to 4:00 PM
         </div>
+        <button class="instructor-btn" onclick="openModal(0)">Meet the Instructor</button>
       </div>
 
       <div class="level-box">
@@ -181,6 +304,7 @@
           Tue & Thu - 11:00 AM to 1:00 PM<br>
           Sun - 3:00 PM to 5:00 PM
         </div>
+        <button class="instructor-btn" onclick="openModal(1)">Meet the Instructor</button>
       </div>
 
       <div class="level-box">
@@ -196,12 +320,169 @@
           Fri - 9:00 AM to 12:00 PM<br>
           Sun - 10:00 AM to 1:00 PM
         </div>
+        <button class="instructor-btn" onclick="openModal(2)">Meet the Instructor</button>
       </div>
     </div>
 
-    <div class="register-section">
+    <div class="register-section" style="text-align: center;">
       <a href="register.html" class="register-btn">Register Now</a>
     </div>
+
+    <!-- Single Find Your Ski Level section with quiz functionality -->
+    <h2 style="margin-top: 50px;">Find Your Ski Level</h2>
+    <div class="quiz-section">
+      <p>
+        Not sure where you belong? Our interactive level finder quiz can guide you to the course that matches your skills! Whether you're new to the slopes or a seasoned skier, our tailored approach ensures you're in the right place.
+      </p>
+      <button class="quiz-btn" onclick="takeQuiz()">Start Quiz</button>
+      <div id="quiz-results" class="quiz-results"></div>
+    </div>
+
+    <!-- What Our Students Say -->
+    <h2 style="margin-top: 50px;">What Our Students Say</h2>
+    <div class="levels">
+      <div class="level-box">
+        "I never skied before, and this quiz helped me find the right class to join!"
+        <br><strong>- Lara, Beginner</strong>
+      </div>
+      <div class="level-box">
+        "I was between beginner and intermediate, and the results really matched my level!"
+        <br><strong>- Samir, Intermediate</strong>
+      </div>
+      <div class="level-box">
+        "As an expert skier, I appreciated that the quiz accurately placed me in the advanced course."
+        <br><strong>- Maya, Expert</strong>
+      </div>
+    </div>
+
+    <!-- Seasonal Events -->
+    <h2 style="margin-top: 50px;">Seasonal Events</h2>
+    <div class="description-box">
+      <ul>
+        <li><strong>❄️ December 15:</strong> Opening Day & Welcome Ride</li>
+        <li><strong>🎉 January 10:</strong> Torchlight Descent Night</li>
+        <li><strong>🎿 February 14:</strong> Valentine's Day Couples Race</li>
+        <li><strong>🏆 March 20:</strong> End-of-Season Ski Showdown</li>
+      </ul>
+    </div>
   </div>
+
+  <!-- Instructor Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <audio id="hoverSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3d5c7688d8.mp3?filename=button-click-124467.mp3" preload="auto"></audio>
+
+  <script>
+    // Slider
+    const images = document.querySelectorAll('.fade-slider img');
+    let current = 0;
+    let sliderInterval;
+
+    function showImage(index) {
+      images.forEach(img => img.classList.remove('active'));
+      images[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+
+    function startSlider() {
+      sliderInterval = setInterval(nextSlide, 2000);
+    }
+
+    function stopSlider() {
+      clearInterval(sliderInterval);
+    }
+
+    startSlider();
+
+    document.getElementById("slider").addEventListener("mouseenter", stopSlider);
+    document.getElementById("slider").addEventListener("mouseleave", startSlider);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") nextSlide();
+      else if (e.key === "ArrowLeft") prevSlide();
+    });
+
+    // Fun Facts
+    const facts = [
+      "⛷️ 'Skiing helps build core strength and coordination!'",
+      "🏔️ 'Skiing originated in Scandinavia over 4,000 years ago!'",
+      "🧤 'Layering clothes is key to staying warm and flexible!'",
+      "🎿 'Carving is all about edge control and body weight!'"
+    ];
+    let factIndex = 0;
+    setInterval(() => {
+      factIndex = (factIndex + 1) % facts.length;
+      document.getElementById('factsBox').innerText = facts[factIndex];
+    }, 4000);
+
+    // Modal
+    const instructors = [
+      { name: "Ranim Ibrahim", photo: "https://example.com/ranim.jpg", bio: "Ranim has over 10 years of experience teaching beginners." },
+      { name: "Kareen Terkawi", photo: "https://example.com/kareen.jpg", bio: "Kareen loves helping intermediate skiers master their carving." },
+      { name: "Ramzy Haraty", photo: "https://example.com/ramzy.jpg", bio: "Ramzy is a former freestyle competitor who trains experts." }
+    ];
+
+    function openModal(index) {
+      const modal = document.getElementById("modal");
+      const content = document.getElementById("modalContent");
+      const instructor = instructors[index];
+      content.innerHTML = `
+        <img src="${instructor.photo}" alt="${instructor.name}" />
+        <h3>${instructor.name}</h3>
+        <p>${instructor.bio}</p>
+        <div class="close" onclick="modal.style.display='none'">Close</div>
+      `;
+      modal.style.display = 'flex';
+    }
+
+    // Quiz Functionality
+    function takeQuiz() {
+      const questions = [
+        "How confident are you on skis? (1: Not confident, 2: Moderately confident, 3: Very confident)",
+        "How many times have you skied before? (1: Never, 2: 1-5 times, 3: More than 5)",
+        "Do you feel comfortable on advanced slopes? (1: No, 2: Sometimes, 3: Yes)"
+      ];
+      
+      let score = 0;
+      
+      for (let i = 0; i < questions.length; i++) {
+        let answer;
+        while (true) {
+          answer = prompt(`Question ${i+1}/${questions.length}\n\n${questions[i]}`);
+          if (answer === null) return; // User cancelled
+          answer = answer.trim();
+          if (["1", "2", "3"].includes(answer)) break;
+          alert("Please enter 1, 2, or 3");
+        }
+        score += parseInt(answer);
+      }
+      
+      let level = "";
+      if (score <= 4) level = "Beginner";
+      else if (score <= 7) level = "Intermediate";
+      else level = "Expert";
+      
+      const resultsDiv = document.getElementById("quiz-results");
+      resultsDiv.innerText = `Your Ski Level: ${level}`;
+      resultsDiv.style.display = "block";
+      
+      // Scroll to results
+      resultsDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function playSound() {
+      document.getElementById('hoverSound').play();
+    }
+  </script>
 </body>
 </html>
