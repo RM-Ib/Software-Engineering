@@ -102,6 +102,10 @@ form {
   display: block;
 }
 
+#equip-select, #card-details {
+  display: none;
+}
+
 @keyframes animate {
   from {
     transform: scale(1, 0);
@@ -115,6 +119,11 @@ form {
 
 label, p {
   margin-bottom: 0.5rem;
+}
+
+#omt-warning  {
+  color: red;
+  margin-bottom: 1rem;
 }
 
 select, input[type=text] {
