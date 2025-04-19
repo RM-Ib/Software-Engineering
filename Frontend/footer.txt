@@ -1,0 +1,27 @@
+<footer class="footer" id="footer">
+        <ul class="footer_items" id="footer_items">
+            <li>
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="AboutUs.html">About the Academy</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Help & Policies</h3>
+                <ul>
+                    <li><a href="FAQs.html">FAQs</a></li>
+                    <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </li>
+        </ul>
+    </footer>

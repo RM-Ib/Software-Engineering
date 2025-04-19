@@ -20,6 +20,62 @@
 
 
 /* NAVBAR STYLES */
+
+
+/* Container for the dropdown */
+.navbar_items li {
+  position: relative;
+}
+
+.activitiesnav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  background-color: #7393B3; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  z-index: 999;
+  min-width: 150px;
+  border-radius: 6px;
+  border: 1px solid #053557;
+}
+
+
+.activitiesnav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.activitiesnav ul li {
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.activitiesnav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+/* Hover to show dropdown */
+.navbar_items li:hover .activitiesnav {
+  max-height: 500px; /* large enough to show full content */
+  opacity: 1;
+  padding: 10px 0;
+}
+
+/* Hover effect on items */
+.activitiesnav ul li:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+
 .navbar {
     position: fixed;
     top: 0;
@@ -59,7 +115,7 @@
   }
 
   .logged_in, .notLogged_in {
-    display: none;
+    /*to br figured out later*/
   }
   
   
@@ -69,35 +125,87 @@
   }
   
   
+  
   /* FOOTER STYLES */
-  footer {
-    background-color: #7393B3; 
-    text-align: center;
-    padding: 10px; /* Add vertical spacing above and below it */
-    font-size: 14px; 
-    width: 100%; /* Full width */
-    bottom: 0; /* Stick to the bottom */
-    
+  .footer {
+    background-color: #7393B3;
+    padding: 30px 20px;
 }
-  
-  
-  .footer_items {
+
+.footer_items {
     list-style: none;
-  }
-  
-  .footer_items li {
-    margin-bottom: 5px;
-  }
-  
-  .footer_items li a {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_items > li {
+    margin: 20px;
+    min-width: 200px;
+}
+
+.footer_items h3 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+/* Half underline effect */
+.footer_items h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: #0077cc;
+}
+
+.footer_items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_items ul li {
+    margin: 8px 0;
+}
+
+.footer_items ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer_items li a:hover {
+    transition: color 0.3s ease;
+}
+
+.footer_items ul li a:hover {
+    color:#022429;    
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    font-size: 20px;
+    color: #0077cc;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
     color: #022429;
-  }
+    
+}
   
   /* COPYRIGHT TEXT */
   .footer::after {
@@ -107,4 +215,10 @@
     margin-top: 10px;
     padding-left: 2%;
   }
+
+
+
+
+  
+  
   
