@@ -24,7 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-//navbar load
-$(function(){
-  $("#navbar").load("nav.txt");
-});
+
+
