@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haraty's Winter Crest Academy</title>
     <link rel="stylesheet" href="home.css">
+    <link rel= "stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar" id="navbar">
+        <img src="../Images/Logo.png" alt="academy logo" class="logo">
+        <ul class="navbar_items" id="navbar_items">
+            <li><a href="home.html">Home</a></li>
+            <li class="logged_in"><a href="UserProfile.html">My Profile</a></li>
+            <li>
+                <div class="dropdown-label">Activities ▼</div>
+                <div class="activitiesnav">
+                    <ul>
+                        <li><a href="SkiingPage.html">Skiing</a></li>
+                        <li><a href="Snowboarding.html">Snowboarding</a></li>
+                        <li><a href="Sledding.html">Sledding</a></li>
+                        <li><a href="Iceclimbing.html">Ice Climbing</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="notLogged_in"><a href="Log-in.html">Login</a></li>
+            <li class="logged_in"><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </nav>
     <section class="hero">
         <div class="hero-content">
             <h1>Haraty's Winter Crest Academy</h1>
@@ -45,5 +66,32 @@
             </div>
         </div>
     </section>
+    <footer class="footer" id="footer">
+        <ul class="footer_items" id="footer_items">
+            <li>
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="AboutUs.html">About the Academy</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Help & Policies</h3>
+                <ul>
+                    <li><a href="FAQs.html">FAQs</a></li>
+                    <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </li>
+        </ul>
+    </footer>
 </body>
 </html>
