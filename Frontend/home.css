@@ -2,30 +2,21 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
 .hero {
-   
-    background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Images/homepic.jpg');
-
-    background-size: cover ;
-    
-    background-position: center;
-
-
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('../Images/homepic.jpg');
+    background-size: cover;
     color: white;
     text-align: center;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
+    padding: 200px;
     
-    padding: 20px;
-    box-sizing: border-box;
-   
-    
-    margin-top: 300px;
-    }
+}
+
     
 
 
