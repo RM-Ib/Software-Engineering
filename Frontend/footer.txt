@@ -11,7 +11,7 @@
                 <h3>Help & Policies</h3>
                 <ul>
                     <li><a href="FAQs.html">FAQs</a></li>
-                    <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 </ul>
             </li>
             <li>
