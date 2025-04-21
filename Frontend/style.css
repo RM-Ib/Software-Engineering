@@ -36,7 +36,7 @@
   transition: max-height 0.3s ease, opacity 0.3s ease;
   opacity: 0;
   position: absolute;
-  background-color: #7393B3; 
+  background-color: #8baccc; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   z-index: 999;
@@ -85,7 +85,7 @@
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #7393B3;
+    background-color: #8baccc;
     ;
     color: white;
     display: flex;
@@ -131,7 +131,7 @@
   
   /* FOOTER STYLES */
   .footer {
-    background-color: #7393B3;
+    background-color: #8baccc;
     padding: 30px 20px;
 }
 
