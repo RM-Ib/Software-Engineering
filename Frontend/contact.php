@@ -1,0 +1,35 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "Form received!<br>";
+
+    // Get form data
+    $name = $_POST['fullName'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    // Connect to MySQL
+    $conn = new mysqli("localhost", "root", "", "winteracademy");
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    // Insert into database
+    $sql = "INSERT INTO contacts (name, email, subject, message)
+            VALUES ('$name', '$email', '$subject', '$message')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Message sent successfully!";
+    } else {
+        echo "Error: " . $conn->error;
+    }
+
+    $conn->close();
+}
+?>
