@@ -153,7 +153,8 @@ input[type="submit"]:hover {
     <div class="signup-container">
       <h1>Sign up</h1>
       
-      <form action="Log-in.html" method="POST" onsubmit="return validateForm()"><!--only for now, while theres no backend, must bring u back to login page to login to new acc-->
+      <form id="SignupForm" method="POST" onsubmit="return false;">
+      <div id="errorMessage" style="display:none; color:red; margin-top:10px;"></div>
         <div class=eLabel>
         <label for="Fname">First name</label><br>
         <input type="text" id="Fname" name="Fname" required><br>
@@ -190,17 +191,22 @@ input[type="submit"]:hover {
 
 
     <script>
-    function validateForm()  {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const Fname = document.getElementById("Fname").value;
-    const Lname = document.getElementById("Lname").value;
-    const Pnumber = document.getElementById("Pnumber").value;
-    const Height = document.getElementById("Height").value;
-    const Weight = document.getElementById("Weight").value;
-    const Disabilities = document.getElementById("Disabilities").value;
+    document.getElementById("SignupForm").addEventListener("submit", function(event) {
+      event.preventDefault();  
+      submitSignupForm();       
+    });
 
-    if (!email ||!password ||!Fname ||!Lname ||!Pnumber ||!Height ||!Weight) {
+    function submitSignupForm() {
+      const Fname = document.getElementById("Fname").value;
+      const Lname = document.getElementById("Lname").value;
+      const Pnumber = document.getElementById("Pnumber").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const Weight = document.getElementById("Weight").value;
+      const Height = document.getElementById("Height").value;
+      const Disabilities = document.getElementById("Disabilities").value;
+
+    if (!Fname || !Lname || !email || !password || !Pnumber || !Weight || !Height) {
       alert("All fields are required.");
       return false; 
     }
@@ -210,7 +216,36 @@ input[type="submit"]:hover {
       alert("Please enter a valid email address.");
       return false;
     }
-    }
+
+    const xhr = new XMLHttpRequest();
+      xhr.open("POST", "../backend/Signup_handler.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+      const data = `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&Pnumber=${encodeURIComponent(Pnumber)}&Fname=${encodeURIComponent(Fname)}&Lname=${encodeURIComponent(Lname)}&Weight=${encodeURIComponent(Weight)}&Height=${encodeURIComponent(Height)}&Disabilities=${encodeURIComponent(Disabilities)}`;
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+          try {
+            const response = JSON.parse(xhr.responseText);
+            if (response.success) {
+              window.location.href = "Log-in.php";
+            } else {
+              document.getElementById("errorMessage").innerText = response.message;
+              document.getElementById("errorMessage").style.display = "block";
+            }
+          } catch (e) {
+            console.error("JSON parse error", e);
+            document.getElementById("errorMessage").innerText = "Server error. Please try again.";
+            document.getElementById("errorMessage").style.display = "block";
+          }
+        } else {
+          console.error("Request failed with status:", xhr.status);
+        }
+      };
+
+      xhr.send(data);
+  };
+
     </script>
 
     

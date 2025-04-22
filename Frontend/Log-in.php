@@ -154,8 +154,12 @@ input[type="submit"]:hover {
     <div class="login-container">
         
       <h1>Log in</h1>
+
+      <?php if (isset($error_message)): ?>
+        <p style="color: red;"><?php echo $error_message; ?></p>
+      <?php endif; ?>
       
-      <form action="categories.html" method="POST" onsubmit="return validateForm()"> <!-- for now since theres no backend directly gets u to categories page -->
+      <form id="loginForm" method="POST" onsubmit="return false;">
         <div class=eLabel>
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email" required><br>
@@ -163,25 +167,32 @@ input[type="submit"]:hover {
         <div class=eLabel>
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password" required><br><br>
-	<a href="ForgotPassword.html" style="font-size: 0.9em; color: #1E4A3B; display: block; margin-bottom: 10px;">Forgot Password?</a>
         </div>
         <input type="submit" value="Log in"><br>
       </form>
     
       <p>Don't have an account?</p>
-      <a href="Sign-up.html">Sign Up</a>
+      <a href="Sign-up.php">Sign Up</a>
     </div>
     </div>
 
 
     <script>
-    function validateForm()  {
+    console.log("Login script loaded");
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault();  
+  submitLoginForm();       
+});
+
+ function submitLoginForm() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    if (!email ||!password) {
+
+    if (!email || !password) {
       alert("Both fields are required.");
-      return false; 
+      return false;
     }
 
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -189,11 +200,38 @@ input[type="submit"]:hover {
       alert("Please enter a valid email address.");
       return false;
     }
-    // set the boolean isLoggedIn to true, this is for hiding and showing other elements on pages.
-    localStorage.setItem("isLoggedIn", "true");
-    
 
+
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "../backend/Login-handler.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  const data = `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      try {
+        const response = JSON.parse(xhr.responseText);
+        if (response.success) {
+          window.location.href = "home.html";
+        } else {
+          document.getElementById("errorMessage").innerText = response.message;
+          document.getElementById("errorMessage").style.display = "block";
+        }
+      } catch (e) {
+        console.error("JSON parse error", e);
+        document.getElementById("errorMessage").innerText = "Server error. Please try again.";
+        document.getElementById("errorMessage").style.display = "block";
+      }
+    } else {
+      console.error("Request failed with status:", xhr.status);
     }
+  };
+
+  xhr.send(data);
+}
+
+
     </script>
 
     
