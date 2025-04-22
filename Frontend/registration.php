@@ -1,3 +1,22 @@
+
+<?php  // Reina Najjar
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "winteracademy";
+
+// Create connection
+$conn = mysqli_connect($host, $user, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +55,19 @@
       });
 
       $("#yes").click(function () {
+        let activity = $("#activity").val();
+        $("#equip-select").html('');
+        $.ajax({
+          url: "../Backend/registration-action.php",
+          type: "POST",
+          data: {
+            equip: 'yes',
+          activity: activity
+          },
+          success: function(result) {
+            $("#equip-select").html(result);
+          }
+        });
         $("#equip-select").show();
       });
 
@@ -51,6 +83,58 @@
       $("#card").click(function () {
         $("#omt-warning").hide();
         $("#card-details").show();
+      });
+    });
+
+    $(document).ready(function () {
+      let activity = $("#activity").val();
+      let course = $("#course").val();
+      $("#time").html('');
+      $.ajax({
+        url: "../Backend/registration-action.php",
+        type: "POST",
+        data: {
+          activity: activity,
+          course: course,
+        },
+        success: function(result) {
+          $("#time").html(result);
+        }
+      });
+      
+
+      $("#activity").change(function(){
+        let activity = $("#activity").val();
+        let course = $("#course").val();
+        $("#time").html('');
+        $.ajax({
+          url: "../Backend/registration-action.php",
+          type: "POST",
+          data: {
+          activity: activity,
+          course: course,
+          },
+          success: function(result) {
+            $("#time").html(result);
+          }
+        });
+      });
+
+      $("#course").change(function(){
+        let activity = $("#activity").val();
+        let course = $("#course").val();
+        $("#time").html('');
+        $.ajax({
+          url: "../Backend/registration-action.php",
+          type: "POST",
+          data: {
+          activity: activity,
+          course: course,
+          },
+          success: function(result) {
+            $("#time").html(result);
+          }
+        });
       });
     });
 
@@ -95,17 +179,15 @@
           <div class="input-group">
             <label for="course">Course</label>
             <select name="course" id="course">
-              <option value="lvl1">Beginner</option>
-              <option value="lvl2">Intermediate</option>
-              <option value="lvl3">Expert</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="expert">Expert</option>
             </select>
           </div>
 
           <div class="input-group">
             <label for="time">Pick a time and duration</label>
             <select name="time" id="time">
-              <option value="time1">Mon & Wed - 10:00 AM to 12:00 PM</option>
-              <option value="time2">Sat - 2:00 PM to 4:00 PM </option>
             </select>
           </div>
 
@@ -118,13 +200,6 @@
           </div>
 
           <div id="equip-select" class="input-group">
-            <p>Pick equipment</p>
-            <input type="checkbox" id="skii" name="equip" value="skii" checked>
-            <label for="skii"> Ski</label><br>
-            <input type="checkbox" id="skiboots" name="equip" value="Ski boots">
-            <label for="skiboots"> Ski boots</label><br>
-            <input type="checkbox" id="skipoles" name="equip" value="Ski poles">
-            <label for="skipoles"> Ski poles</label>
           </div>
 
           <div class="btn btn-next width-50 ml-auto">
