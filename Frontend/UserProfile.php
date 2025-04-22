@@ -1,4 +1,37 @@
-  <!DOCTYPE html>
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Log-in.php");
+    exit;
+}
+
+$student_id = $_SESSION['user_id'];
+
+$host = "localhost";
+$db = "winteracademy";
+$user = "root"; 
+$pass = "";     
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $conn->prepare("SELECT * FROM student WHERE ID = :id");
+    $stmt->bindParam(':id', $student_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $student = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$student) {
+        echo "Student not found.";
+        exit;
+    }
+} catch (PDOException $e) {
+    echo "Database error: " . $e->getMessage();
+    exit;
+}
+?>
+<!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8" />

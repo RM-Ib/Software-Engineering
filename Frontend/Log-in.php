@@ -215,7 +215,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
       try {
         const response = JSON.parse(xhr.responseText);
         if (response.success) {
-          window.location.href = "home.html";
+          window.location.href = "home.php";
         } else {
           document.getElementById("errorMessage").innerText = response.message;
           document.getElementById("errorMessage").style.display = "block";
