@@ -217,6 +217,18 @@ input[type="submit"]:hover {
       return false;
     }
 
+    if (Pnumber.length < 8) {
+    alert("Phone number must be at least 8 characters long.");
+    return false;
+    }
+
+
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    if (!passwordPattern.test(password)) {
+    alert("Password must be at least 8 characters long, and include:\n- One uppercase letter\n- One lowercase letter\n- One number\n- One special character (e.g. @, &, #)");
+    return false;
+    }
+
     const xhr = new XMLHttpRequest();
       xhr.open("POST", "../backend/Signup_handler.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
