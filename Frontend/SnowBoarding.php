@@ -327,7 +327,7 @@
     </div>
 
     <div class="register-section" style="text-align: center;">
-      <a href="registration.html" class="register-btn">Register Now</a>
+      <a href="registration.php" class="register-btn">Register Now</a>
     </div>
 
     <!-- Find Your Snowboarding Level section with quiz functionality -->
@@ -429,9 +429,9 @@
 
     // Modal
     const instructors = [
-      { name: "Rabab Hassid", photo: "https://example.com/ranim.jpg", bio: "Rabab specializes in teaching first-time snowboarders with patience and encouragement." },
-      { name: "Reina Najjar", photo: "https://example.com/kareen.jpg", bio: "Reina helps intermediate riders progress their freestyle and carving skills." },
-      { name: "Ramzy Haraty", photo: "https://example.com/ramzy.jpg", bio: "Ramzy coaches advanced techniques for park, powder, and competition riding." }
+      { name: "Ranim Ibrahim", photo: "../Images/ranimprofile.jpg", bio: "Ranim specializes in teaching first-time snowboarders with patience and encouragement." },
+      { name: "Reina Najjar", photo: "../Images/reinaprofile.jpg", bio: "Reina helps intermediate riders progress their freestyle and carving skills." },
+      { name: "Rabab Hassid", photo: "../Images/rababprofile.jpg", bio: "Rabab coaches advanced techniques for park, powder, and competition riding." }
     ];
 
     function openModal(index) {
@@ -489,20 +489,20 @@
   <nav class="navbar" id="navbar">
     <img src="../Images/Logo.png" alt="academy logo" class="logo">
     <ul class="navbar_items" id="navbar_items">
-        <li><a href="HomePage.html">Home</a></li>
-        <li class="logged_in"><a href="UserProfile.html">My Profile</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li class="logged_in"><a href="UserProfile.php">My Profile</a></li>
         <li>
             <div class="dropdown-label">Activities ▼</div>
             <div class="activitiesnav">
                 <ul>
-                    <li><a href="SkiingPage.html">Skiing</a></li>
-                    <li><a href="Snowboarding.html">Snowboarding</a></li>
-                    <li><a href="Sledding.html">Sledding</a></li>
-                    <li><a href="Iceclimbing.html">Ice Climbing</a></li>
+                    <li><a href="SkiingPage.php">Skiing</a></li>
+                    <li><a href="Snowboarding.php">Snowboarding</a></li>
+                    <li><a href="Sledding.php">Sledding</a></li>
+                    <li><a href="Iceclimbing.php">Ice Climbing</a></li>
                 </ul>
             </div>
         </li>
-        <li class="notLogged_in"><a href="Log-in.html">Login</a></li>
+        <li class="notLogged_in"><a href="Log-in.php">Login</a></li>
         <li class="logged_in"><a href="#" id="logoutBtn">Logout</a></li>
     </ul>
   </nav>
@@ -511,15 +511,15 @@
         <li>
             <h3>About Us</h3>
             <ul>
-                <li><a href="AboutUs.html">About the Academy</a></li>
-                <li><a href="ContactUs.html">Contact Us</a></li>
+                <li><a href="AboutUs.php">About the Academy</a></li>
+                <li><a href="ContactUs.php">Contact Us</a></li>
             </ul>
         </li>
         <li>
             <h3>Help & Policies</h3>
             <ul>
-                <li><a href="FAQs.html">FAQs</a></li>
-                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="FAQs.php">FAQs</a></li>
+                <li><a href="privacy-policy.php">Privacy Policy</a></li>
             </ul>
         </li>
         <li>

@@ -174,7 +174,7 @@ main::before {
         </div>
         
         <br>
-        <p>If you have any other questions, feel free to <a href="ContactUs.html">contact us</a>. We are happy to help!</p>
+        <p>If you have any other questions, feel free to <a href="contactus.php">contact us</a>. We are happy to help!</p>
     </main>
     
 

@@ -13,9 +13,7 @@
     $(function () {
       $("#navbar").load("nav.txt");
     });
-    $(function () {
-      $("#footer").load("footer.txt");
-    });
+    
   </script>
   <title>About Us - HWCA</title>
   <style>
@@ -129,33 +127,34 @@
 
     <div class="team">
       <div class="member">
-        <img src="images/DrRamzy.jpg" alt="Dr.Haraty">
+        <img src="../Images/drRamziPic.jpg" alt="Dr.Haraty">
         <p><strong>Dr.Haraty</strong></p>
         <p>The Reason Behind it All</p>
       </div>
 
       <div class="member">
-        <img src="images/ranim1.jpg" alt="Ranim">
+        <img src="../Images/ranimprofile.jpg"alt="Ranim">
         <p><strong>Ranim</strong></p>
         <p>The Spark & Visionary</p>
       </div>
+      
       <div class="member">
-        <img src="images/reina.jpg" alt="Reina">
+        <img src="../Images/skipic.png"; alt="Reina">
         <p><strong>Reina</strong></p>
         <p>The Chill Mastermind</p>
       </div>
       <div class="member">
-        <img src="images/kareen.jpg" alt="Kareen">
+        <img src="../Images/Kareenprofile.jpg" alt="Kareen">
         <p><strong>Kareen</strong></p>
         <p>The Design Queen</p>
       </div>
       <div class="member">
-        <img src="images/rabab.jpg" alt="Rabab">
+        <img src="../Images/rababprofile.jpg" alt="Rabab">
         <p><strong>Rabab</strong></p>
         <p>The Creative Builder</p>
       </div>
       <div class="member">
-        <img src="images/antonio.jpg" alt="Antonio">
+        <img src="../Images/antonioprofile.jpg"alt="Antonio">
         <p><strong>Antonio</strong></p>
         <p>The Code Wizard</p>
       </div>
@@ -171,11 +170,54 @@
  
 
 </main>
-    
 
-    
-<div id="footer">
-
-</div>
+<nav class="navbar" id="navbar">
+    <img src="../Images/Logo.png" alt="academy logo" class="logo">
+    <ul class="navbar_items" id="navbar_items">
+        <li><a href="home.php">Home</a></li>
+        <li class="logged_in"><a href="UserProfile.php">My Profile</a></li>
+        <li>
+            <div class="dropdown-label">Activities ▼</div>
+            <div class="activitiesnav">
+                <ul>
+                    <li><a href="SkiingPage.php">Skiing</a></li>
+                    <li><a href="Snowboarding.php">Snowboarding</a></li>
+                    <li><a href="Sledding.php">Sledding</a></li>
+                    <li><a href="Iceclimbing.php">Ice Climbing</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="notLogged_in"><a href="Log-in.php">Login</a></li>
+        <li class="logged_in"><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+  </nav>
+  <footer class="footer" id="footer">
+    <ul class="footer_items" id="footer_items">
+        <li>
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="AboutUs.php">About the Academy</a></li>
+                <li><a href="contactus.php">Contact Us</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Help & Policies</h3>
+            <ul>
+                <li><a href="FAQs.php">FAQs</a></li>
+                <li><a href="privacy-policy.php">Privacy Policy</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </li>
+    </ul>
+  </footer>
+  
 </body>
 </html>

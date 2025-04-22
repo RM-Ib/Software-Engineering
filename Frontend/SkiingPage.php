@@ -326,7 +326,7 @@
     </div>
 
     <div class="register-section" style="text-align: center;">
-      <a href="registration.html" class="register-btn">Register Now</a>
+      <a href="registration.php" class="register-btn">Register Now</a>
     </div>
 
     <!-- Single Find Your Ski Level section with quiz functionality -->
@@ -428,9 +428,9 @@
 
     // Modal
     const instructors = [
-      { name: "Ranim Ibrahim", photo: "https://example.com/ranim.jpg", bio: "Ranim has over 10 years of experience teaching beginners." },
-      { name: "Kareen Terkawi", photo: "https://example.com/kareen.jpg", bio: "Kareen loves helping intermediate skiers master their carving." },
-      { name: "Ramzy Haraty", photo: "https://example.com/ramzy.jpg", bio: "Ramzy is a former freestyle competitor who trains experts." }
+      { name: "Ranim Ibrahim", photo: "../Images/ranimprofile.jpg", bio: "Ranim has over 10 years of experience teaching beginners." },
+      { name: "Kareen Terkawi", photo: "../Images/Kareenprofile.jpg", bio: "Kareen loves helping intermediate skiers master their carving." },
+      { name: "Antonio Karam", photo: "../Images/antonioprofile.jpg", bio: "Antonio is a former freestyle competitor who trains experts." }
     ];
 
     function openModal(index) {
@@ -489,20 +489,20 @@
 <nav class="navbar" id="navbar">
   <img src="../Images/Logo.png" alt="academy logo" class="logo">
   <ul class="navbar_items" id="navbar_items">
-      <li><a href="HomePage.html">Home</a></li>
-      <li class="logged_in"><a href="UserProfile.html">My Profile</a></li>
+      <li><a href="home.php">Home</a></li>
+      <li class="logged_in"><a href="UserProfile.php">My Profile</a></li>
       <li>
           <div class="dropdown-label">Activities ▼</div>
           <div class="activitiesnav">
               <ul>
-                  <li><a href="SkiingPage.html">Skiing</a></li>
-                  <li><a href="Snowboarding.html">Snowboarding</a></li>
-                  <li><a href="Sledding.html">Sledding</a></li>
-                  <li><a href="Iceclimbing.html">Ice Climbing</a></li>
+                  <li><a href="SkiingPage.php">Skiing</a></li>
+                  <li><a href="Snowboarding.php">Snowboarding</a></li>
+                  <li><a href="Sledding.php">Sledding</a></li>
+                  <li><a href="Iceclimbing.php">Ice Climbing</a></li>
               </ul>
           </div>
       </li>
-      <li class="notLogged_in"><a href="Log-in.html">Login</a></li>
+      <li class="notLogged_in"><a href="Log-in.php">Login</a></li>
       <li class="logged_in"><a href="#" id="logoutBtn">Logout</a></li>
   </ul>
 </nav>
@@ -511,15 +511,15 @@
       <li>
           <h3>About Us</h3>
           <ul>
-              <li><a href="AboutUs.html">About the Academy</a></li>
-              <li><a href="ContactUs.html">Contact Us</a></li>
+              <li><a href="AboutUs.php">About the Academy</a></li>
+              <li><a href="ContactUs.php">Contact Us</a></li>
           </ul>
       </li>
       <li>
           <h3>Help & Policies</h3>
           <ul>
-              <li><a href="FAQs.html">FAQs</a></li>
-              <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+              <li><a href="FAQs.php">FAQs</a></li>
+              <li><a href="privacy-policy.php">Privacy Policy</a></li>
           </ul>
       </li>
       <li>
@@ -531,6 +531,8 @@
               <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
           </ul>
       </li>
+    
+
   </ul>
 </footer>
 

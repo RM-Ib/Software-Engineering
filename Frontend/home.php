@@ -14,6 +14,7 @@ session_start();
     <nav class="navbar" id="navbar">
         <img src="../Images/Logo.png" alt="academy logo" class="logo">
         <ul class="navbar_items" id="navbar_items">
+<<<<<<< Updated upstream
     <li><a href="home.php">Home</a></li>
 
     <?php if (isset($_SESSION['user_id'])): ?>
@@ -38,6 +39,24 @@ session_start();
     </li>
 </ul>
 
+=======
+            <li><a href="home.php">Home</a></li>
+            <li class="logged_in"><a href="UserProfile.php">My Profile</a></li>
+            <li>
+                <div class="dropdown-label">Activities ▼</div>
+                <div class="activitiesnav">
+                    <ul>
+                        <li><a href="SkiingPage.php">Skiing</a></li>
+                        <li><a href="Snowboarding.php">Snowboarding</a></li>
+                        <li><a href="Sledding.php">Sledding</a></li>
+                        <li><a href="Iceclimbing.php">Ice Climbing</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="notLogged_in"><a href="Log-in.php">Login</a></li>
+            <li class="logged_in"><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+>>>>>>> Stashed changes
     </nav>
     <section class="hero">
         <div class="hero-content">
@@ -52,25 +71,25 @@ session_start();
         <h2> HWCA'S Popular Activities </h2>
         <div class="activity-grid">
             <div class="activity">
-                <a href="iceclimbing.html">
+                <a href="iceclimbing.php">
                     <img src="..\Images/iceclimbing.jpg" alt="Ice Climbing">
                     <p>ICE CLIMBING</p>
                 </a>
             </div>
             <div class="activity">
-                <a href="SkiingPage.html">
+                <a href="SkiingPage.php">
                     <img src="..\Images/skiing.jpg" alt="Snowshoeing">
                     <p>SKIING</p>
                 </a>
             </div>
             <div class="activity">
-                <a href="Sledding.html">
+                <a href="Sledding.php">
                     <img src="..\Images/sledding.jpg" alt="Sledding">
                     <p>SLEDDING</p>
                 </a>
             </div>
             <div class="activity">
-                <a href="SnowBoarding.html">
+                <a href="SnowBoarding.php">
                     <img src="..\Images/snowboarding.jpg" alt="Snowboarding">
                     <p>SNOW BOARDING</p>
                 </a>
@@ -104,15 +123,15 @@ session_start();
             <li>
                 <h3>About Us</h3>
                 <ul>
-                    <li><a href="AboutUs.html">About the Academy</a></li>
-                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><a href="AboutUs.php">About the Academy</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
                 </ul>
             </li>
             <li>
                 <h3>Help & Policies</h3>
                 <ul>
-                    <li><a href="FAQs.html">FAQs</a></li>
-                    <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                    <li><a href="FAQs.php">FAQs</a></li>
+                    <li><a href="privacy-policy.php">Privacy Policy</a></li>
                 </ul>
             </li>
             <li>

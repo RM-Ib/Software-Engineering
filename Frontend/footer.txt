@@ -3,15 +3,15 @@
             <li>
                 <h3>About Us</h3>
                 <ul>
-                    <li><a href="AboutUs.html">About the Academy</a></li>
-                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><a href="AboutUs.php">About the Academy</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
                 </ul>
             </li>
             <li>
                 <h3>Help & Policies</h3>
                 <ul>
-                    <li><a href="FAQs.html">FAQs</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="FAQs.php">FAQs</a></li>
+                    <li><a href="privacy-policy.php">Privacy Policy</a></li>
                 </ul>
             </li>
             <li>
