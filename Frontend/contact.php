@@ -11,7 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-
+    // name validation (no numbers )
+    if (!preg_match("/^[a-zA-Z\s]+$/", $name)) {
+        die("Invalid name: only letters and spaces allowed.");
+    }
+    
     // Connect to MySQL
     $conn = new mysqli("localhost", "root", "", "winteracademy");
 
