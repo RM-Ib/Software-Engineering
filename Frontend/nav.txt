@@ -7,10 +7,10 @@
                 <div class="dropdown-label">Activities ▼</div>
                 <div class="activitiesnav">
                     <ul>
-                        <li><a href="SkiingPage.html">Skiing</a></li>
-                        <li><a href="Snowboarding.html">Snowboarding</a></li>
-                        <li><a href="Sledding.html">Sledding</a></li>
-                        <li><a href="Iceclimbing.html">Ice Climbing</a></li>
+                        <li><a href="SkiingPage.php">Skiing</a></li>
+                        <li><a href="Snowboarding.php">Snowboarding</a></li>
+                        <li><a href="Sledding.php">Sledding</a></li>
+                        <li><a href="Iceclimbing.php">Ice Climbing</a></li>
                     </ul>
                 </div>
             </li>
