@@ -1,4 +1,4 @@
-<!-- About Us Page for Haraty's Winter Crest Academy (HWCA) -->
+<!-- By Ranim Ibrahim -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +26,7 @@
   background-position: center;
   background-attachment: fixed; /* This keeps background fixed while scrolling */
   color: #1f4e70;
-  min-height: 100vh; /* Ensures body takes at least full viewport height */
+  min-height: 100vh; 
 }
   
   

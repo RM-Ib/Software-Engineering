@@ -18,12 +18,13 @@
 
     <style>
         main {
-            background-color: #e2edfa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:  #d0eafd;
         }
 
         .policy {
             margin: 20px auto;
-            background-color: white;
+            background-color:#e1f5fe;
             border: 1px solid #ccc;
             border-radius: 0.35rem;
             width: 50%;
@@ -32,6 +33,7 @@
 
         h1 {
             text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     </style>
 </head>

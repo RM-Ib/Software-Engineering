@@ -52,7 +52,7 @@ main::before {
   .question {
     margin: 0;
     padding: 15px;
-    background-color: #7ea1c5;
+    background-color: #d0eafd;
     cursor: pointer;
     font-size: 1.2rem;
   }
@@ -60,7 +60,7 @@ main::before {
   .answer {
     padding: 15px;
     display: none;
-    background-color: #fff;
+    background-color:rgb(245, 252, 255);
     animation: fadeIn 0.3s ease-in-out;
   }
   

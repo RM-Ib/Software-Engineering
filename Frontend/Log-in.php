@@ -43,7 +43,7 @@
 
       a {
         
-        color: #7393B3; 
+        color: #7393B3;
         
       }
       
@@ -103,7 +103,7 @@ box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7),
       input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background: #7393B3;
+            background:   #1a6f96;
             color: white;
             border: none;
             border-radius: 5px;
@@ -134,7 +134,7 @@ box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7),
       }
 
 input[type="submit"]:hover {
-  background-color:#7393B3;
+  background-color:#145a7a; 
   cursor: pointer;
   transform: scale(1.05); 
   transition: background-color 0.3s ease, transform 0.3s ease;

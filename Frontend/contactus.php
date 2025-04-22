@@ -150,7 +150,7 @@
     }
 
     .contact-form h2 {
-      color: #7393B3;
+      color:   #1a6f96;  
       margin-bottom: 20px;
     }
 
@@ -182,7 +182,7 @@
       width: 100%;
       padding: 10px;
       font-size: 16px;
-      background-color: #7393B3;
+      background-color:#1a6f96;
       color: white;
       border: none;
       border-radius: 6px;
@@ -192,6 +192,7 @@
 
     button:hover {
       transform: scale(1.05);
+      background-color: #145a7a;  
     }
 
     .social-media {
