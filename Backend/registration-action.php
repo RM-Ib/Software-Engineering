@@ -12,9 +12,15 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$student_id = 1;
+session_start();
 
 if(isset($_POST['register'])) {
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ../Frontend/Log-in.php");
+        exit;
+    }
+    
+    $student_id = $_SESSION['user_id'];
     $course = $_POST['course'];
     $activity = $_POST['activity'];
     
@@ -26,21 +32,19 @@ if(isset($_POST['register'])) {
         if (mysqli_num_rows($result) > 0) {
             
             echo '<script>alert("You have already registered in this course before")</script>';
-            //header("Location: ../frontend/home.html");
             
             
         } else {
             $insert = mysqli_query($conn, "INSERT INTO student_course(student_id, course_id) VALUES('$student_id', '$course_id')") or die('query failed');
-            if ($insert){ // I would usually use mysql_insert_id as a validation from auto_increment tables.
-                header("Location: ../frontend/home.html");
+            if ($insert){ 
+                header("Location: ../frontend/home.php");
                 exit;
             } else {
                 echo "<p> There was an error when creating the subject </p>" ;
             }
         }
 
-    //echo "<p> no no </p>" ;
-    //header("Location: ../frontend/home.html");
+   
 }
 
 else if(isset($_POST['activity'])) {
