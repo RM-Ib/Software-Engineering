@@ -105,6 +105,18 @@
             $("#timing").html(result);
           }
         });
+        $("#equip-select").html('');
+        $.ajax({
+          url: "../Backend/registration-action.php",
+          type: "POST",
+          data: {
+            equip: 'yes',
+          activity: activity
+          },
+          success: function(result) {
+            $("#equip-select").html(result);
+          }
+        });
       });
 
       $("#course").change(function(){
@@ -120,6 +132,18 @@
           },
           success: function(result) {
             $("#timing").html(result);
+          }
+        });
+        $("#equip-select").html('');
+        $.ajax({
+          url: "../Backend/registration-action.php",
+          type: "POST",
+          data: {
+            equip: 'yes',
+          activity: activity
+          },
+          success: function(result) {
+            $("#equip-select").html(result);
           }
         });
       });
@@ -175,7 +199,6 @@
             <label for="activity">Activity</label>
             <select name="activity" id="activity">
               <option value="skiing">Skiing</option>
-              <option value="snowshoeing">Snowshoeing</option>
               <option value="sledding">Sledding</option>
               <option value="snowboarding">Snowboarding</option>
               <option value="ice climbing">Ice Climbing</option>
