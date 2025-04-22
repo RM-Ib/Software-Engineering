@@ -158,6 +158,8 @@ input[type="submit"]:hover {
       <?php if (isset($error_message)): ?>
         <p style="color: red;"><?php echo $error_message; ?></p>
       <?php endif; ?>
+
+      <p id="errorMessage" style="color: red; display: none;"></p>
       
       <form id="loginForm" method="POST" onsubmit="return false;">
         <div class=eLabel>

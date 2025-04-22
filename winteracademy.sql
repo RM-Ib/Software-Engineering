@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `course`;
-CREATE TABLE IF NOT EXISTS `course` (
+CREATE TABLE IF NOT EXISTS `course` ( 
   `id` int NOT NULL AUTO_INCREMENT,
   `timing` varchar(200) NOT NULL,
   `capacity` int NOT NULL,
