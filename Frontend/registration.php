@@ -1,20 +1,5 @@
 
-<?php  // Reina Najjar
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "winteracademy";
 
-// Create connection
-$conn = mysqli_connect($host, $user, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-
-?>
 
 
 <!DOCTYPE html>
@@ -78,18 +63,24 @@ if (!$conn) {
       $("#omt").click(function () {
         $("#omt-warning").show();
         $("#card-details").hide();
+        $("#card-num").prop( "required", false );
+        $("#fname").prop( "required", false );
+        $("#lname").prop( "required", false );
       });
 
       $("#card").click(function () {
         $("#omt-warning").hide();
         $("#card-details").show();
+        $("#card-num").prop( "required", true );
+        $("#fname").prop( "required", true );
+        $("#lname").prop( "required", true );
       });
     });
 
     $(document).ready(function () {
       let activity = $("#activity").val();
       let course = $("#course").val();
-      $("#time").html('');
+      $("#timing").html('');
       $.ajax({
         url: "../Backend/registration-action.php",
         type: "POST",
@@ -98,7 +89,7 @@ if (!$conn) {
           course: course,
         },
         success: function(result) {
-          $("#time").html(result);
+          $("#timing").html(result);
         }
       });
       
@@ -106,7 +97,7 @@ if (!$conn) {
       $("#activity").change(function(){
         let activity = $("#activity").val();
         let course = $("#course").val();
-        $("#time").html('');
+        $("#timing").html('');
         $.ajax({
           url: "../Backend/registration-action.php",
           type: "POST",
@@ -115,7 +106,7 @@ if (!$conn) {
           course: course,
           },
           success: function(result) {
-            $("#time").html(result);
+            $("#timing").html(result);
           }
         });
       });
@@ -123,7 +114,7 @@ if (!$conn) {
       $("#course").change(function(){
         let activity = $("#activity").val();
         let course = $("#course").val();
-        $("#time").html('');
+        $("#timing").html('');
         $.ajax({
           url: "../Backend/registration-action.php",
           type: "POST",
@@ -132,7 +123,26 @@ if (!$conn) {
           course: course,
           },
           success: function(result) {
-            $("#time").html(result);
+            $("#timing").html(result);
+          }
+        });
+      });
+
+      $(".register").click(function(){
+        let activity = $("#activity").val();
+        let course = $("#course").val();
+        let timing = $("#timing").val();
+        $(".error").html('');
+        $.ajax({
+          url: "../Backend/registration-action.php",
+          type: "POST",
+          data: {
+          activity: activity,
+          course: course,
+          timing: timing
+          },
+          success: function(result) {
+            $(".error").html(result);
           }
         });
       });
@@ -152,7 +162,7 @@ if (!$conn) {
     <h1>Course Registration</h1>
 
     <div class="form">
-      <form action="#">
+      <form method="post" action="../Backend/registration-action.php">
         <!-- Progress bar -->
         <div class="progressbar">
           <div class="progress" id="progress">
@@ -186,8 +196,8 @@ if (!$conn) {
           </div>
 
           <div class="input-group">
-            <label for="time">Pick a time and duration</label>
-            <select name="time" id="time">
+            <label for="timing">Pick a time and duration</label>
+            <select name="timing" id="timing">
             </select>
           </div>
 
@@ -222,7 +232,7 @@ if (!$conn) {
           <div id="card-details">
             <div class="input-group">
               <label for="card-num">Card Number</label><br>
-              <input type="text" name="card-num" id="card-num" required>
+              <input type="text" name="card-num" id="card-num" >
             </div>
 
             <div class="flex">
@@ -259,22 +269,23 @@ if (!$conn) {
 
             <div class="input-group">
               <label for="fname" class="block">First name</label>
-              <input type="text" name="fname" id="fname" required>
+              <input type="text" name="fname" id="fname" >
             </div>
 
             <div class="input-group">
               <label for="lname" class="block">Last name</label>
-              <input type="text" name="lname" id="lname" required>
+              <input type="text" name="lname" id="lname" >
             </div>
           </div>
 
           <div class="btns-group">
             <a href="#" class="btn btn-prev">Previous</a>
-            <input type="submit" value="Submit" class="btn">
+            <input type="submit" value="Submit" class="btn" name="register">
           </div>
 
         </div>
       </form>
+      <div class="error"></div>
     </div>
   </main>
 
