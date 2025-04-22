@@ -336,7 +336,6 @@ try {
           <div class="studentinfo" id="studentinfo">
             <h1>Student Info</h1>
             <ul>
-              <li><p>Bdate</p><p><?php echo htmlspecialchars($student['Birthdate']); ?></p></li>
               <li><p>Weight</p><p><?php echo htmlspecialchars($student['Weight']); ?> kg</p></li>
               <li><p>Height</p><p><?php echo htmlspecialchars($student['Height']); ?> cm</p></li>
               <li><p>Disabilities</p><p><?php echo htmlspecialchars($student['Disabilities']); ?></p></li>
