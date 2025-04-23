@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       exit;
   }
 
-  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT); //mara7ib
 
   try {
       $insertStmt = $pdo->prepare("
