@@ -529,7 +529,7 @@ session_start();
     const supervisors = [
       { 
         name: "Reina Najjar", 
-        photo: "../Images/ranimprofile.jpg", 
+        photo: "../Images/reinaprofile.jpg", 
         bio: "Reina oversees our beginner sledding area, ensuring a safe and enjoyable experience for young children and families." 
       },
       { 
