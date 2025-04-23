@@ -339,7 +339,7 @@ session_start();
   <main>
     <div class="contact-form">
       <h2>Contact Us</h2>
-      <form method="POST" action="../backend/contact.php">
+      <form method="POST" action="../Backend/contact.php">
         <div class="form-group">
           <label for="fullName">Full Name</label>
           <input type="text" id="fullName" name="fullName" required pattern="[A-Za-z\s]+" title="Please enter letters only.">
