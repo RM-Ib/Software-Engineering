@@ -18,7 +18,7 @@
     let formStepsNum = 0;
 
     $(document).ready(function () {
-      $("#navbar").load("nav.txt");
+      // $("#navbar").load("nav.txt");
       $("#footer").load("footer.txt");
 
       $(".btn-next").click(function () {
@@ -174,7 +174,7 @@
 
 <body>
   <div id="navbar">
-
+    <?php include 'nav.php'?>
   </div>
 
 
