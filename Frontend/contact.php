@@ -4,8 +4,7 @@ ini_set('display_errors', 1);
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "Form received!<br>";
-
+   
     // Get form data
     $name = $_POST['fullName'];
     $email = $_POST['email'];
@@ -29,10 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$name', '$email', '$subject', '$message')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Message sent successfully!";
+        echo "<script>alert('Message sent successfully!');
+         window.location.href = window.location.href;</script>";
     } else {
-        echo "Error: " . $conn->error;
+        echo "<script>alert('Error: " . $conn->error . "');</script>";
     }
+
 
     $conn->close();
 }
