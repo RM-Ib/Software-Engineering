@@ -43,9 +43,9 @@ try {
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!--by kareen terkawi-->
     <script>
-      $(function () {
-        $("#navbar").load("nav.txt");
-      });
+      // $(function () {
+      //   $("#navbar").load("nav.txt");
+      // });
       $(function () {
         $("#footer").load("footer.txt");
       });
@@ -270,7 +270,9 @@ try {
   <!-- By Kareen Terkawi -->
   <body>
 
-    <div id="navbar"></div>
+    <div id="navbar">
+    <?php include 'nav.php'?>
+    </div>
 
     <main class="content-wrapper">
       <div class="background"></div>
