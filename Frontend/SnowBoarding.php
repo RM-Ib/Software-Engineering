@@ -7,6 +7,7 @@ session_start();
   <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>Snowboarding - HWCA</title>
   <style>
     body {
@@ -539,6 +540,7 @@ session_start();
                 <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/haraty-s-winter-crest-academy-226757361/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul>
         </li>
     </ul>

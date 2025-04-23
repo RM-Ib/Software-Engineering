@@ -11,6 +11,7 @@ session_start();
   <!-- Preload slider images -->
   <link rel="preload" href="../Images/sledding1.jpg" as="image">
   <link rel="preload" href="../Images/sledding2.jpg" as="image">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
@@ -662,6 +663,7 @@ session_start();
                 <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/haraty-s-winter-crest-academy-226757361/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul>
         </li>
     </ul>
