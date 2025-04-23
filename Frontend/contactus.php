@@ -366,9 +366,11 @@ session_start();
       <div class="social-media">
         <p>💬 Stay connected:</p>
         <div class="social-links">
-          <a href="#">Facebook</a>
-          <a href="#">@wintercrest</a>
-          <a href="#">LinkedIn</a>
+          
+        <a href="H.wintercrestacademy@outlook.com">Email Us</a>
+
+        <a href="https://www.linkedin.com/in/haraty-s-winter-crest-academy-226757361/" target="_blank">LinkedIn</a>
+          
         </div>
       </div>
     </div>
