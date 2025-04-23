@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -490,7 +493,16 @@
     <img src="../Images/Logo.png" alt="academy logo" class="logo">
     <ul class="navbar_items" id="navbar_items">
         <li><a href="home.php">Home</a></li>
-        <li class="logged_in"><a href="UserProfile.php">My Profile</a></li>
+
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <!-- Only visible when logged in -->
+            <li><a href="UserProfile.php">My Profile</a></li>
+            <li><a href="../backend/logout.php" id="logoutBtn">Logout</a></li>
+        <?php else: ?>
+            <!-- Only visible when NOT logged in -->
+            <li><a href="Log-in.php">Login</a></li>
+        <?php endif; ?>
+
         <li>
             <div class="dropdown-label">Activities ▼</div>
             <div class="activitiesnav">
@@ -502,10 +514,8 @@
                 </ul>
             </div>
         </li>
-        <li class="notLogged_in"><a href="Log-in.php">Login</a></li>
-        <li class="logged_in"><a href="#" id="logoutBtn">Logout</a></li>
     </ul>
-  </nav>
+</nav>
   <footer class="footer" id="footer">
     <ul class="footer_items" id="footer_items">
         <li>
