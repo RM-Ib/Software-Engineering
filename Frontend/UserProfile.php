@@ -26,6 +26,16 @@ try {
         echo "Student not found.";
         exit;
     }
+    $courseStmt = $conn->prepare("
+        SELECT c.*
+        FROM course c
+        INNER JOIN student_course sc ON c.id = sc.course_id
+        WHERE sc.student_id = :student_id
+    ");
+    $courseStmt->bindParam(':student_id', $student_id, PDO::PARAM_INT);
+    $courseStmt->execute();
+    $courses = $courseStmt->fetchAll(PDO::FETCH_ASSOC);
+
 } catch (PDOException $e) {
     echo "Database error: " . $e->getMessage();
     exit;
@@ -298,8 +308,7 @@ try {
             </ul>
           </div>
         </div>
-
-        <!-- Right: Courses + Student Info -->
+>
         <div class="main-content-group">
 
           <div class="course-and-certificate">
@@ -309,9 +318,13 @@ try {
               <div class="ongoing" id="ongoing">
                 <h2>Ongoing</h2>
                 <div class="carousel">
-                  <div class="course-card">course 1<p>course 1 details</p></div>
-                  <div class="course-card">course 2<p>course 2 details</p></div>
-                  <div class="course-card">course 3<p>course 3 details</p></div>
+                <?php foreach ($courses as $course): ?>
+              <div class="course-card">
+              <?php echo htmlspecialchars($course['sport']); ?>
+              <p><?php echo htmlspecialchars($course['timing']); ?></p>
+              </div>
+              <?php endforeach; ?>
+                  
                 </div>
               </div>
 
