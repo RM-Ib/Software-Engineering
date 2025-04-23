@@ -105,7 +105,7 @@ session_start();
                 <h3>About Us</h3>
                 <ul>
                     <li><a href="AboutUs.php">About the Academy</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
                 </ul>
             </li>
             <li>
