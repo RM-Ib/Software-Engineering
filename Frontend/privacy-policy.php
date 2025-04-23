@@ -14,7 +14,6 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-          $("#navbar").load("nav.txt");
           $("#footer").load("footer.txt");
         });
     </script>
@@ -42,7 +41,7 @@ session_start();
 </head>
 <body>
     <div id="navbar">
-
+        <?php include 'nav.php'?>
     </div>
   
   

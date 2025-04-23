@@ -18,7 +18,6 @@
     let formStepsNum = 0;
 
     $(document).ready(function () {
-      // $("#navbar").load("nav.txt");
       $("#footer").load("footer.txt");
 
       $(".btn-next").click(function () {
