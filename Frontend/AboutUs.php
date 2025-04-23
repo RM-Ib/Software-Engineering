@@ -142,7 +142,7 @@ session_start();
       </div>
       
       <div class="member">
-        <img src="../Images/skipic.png"; alt="Reina">
+        <img src="../Images/reinaprofile.jpg"; alt="Reina">
         <p><strong>Reina</strong></p>
         <p>The Chill Mastermind</p>
       </div>
